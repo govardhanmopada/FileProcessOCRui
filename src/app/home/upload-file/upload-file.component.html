@@ -1,0 +1,81 @@
+<!-- <div style="text-align:center">
+	<div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+	<div><img [src]="url" *ngIf="url"></div>
+	<p>
+		<input type="file" (change)="selectFile($event)">
+	</p>
+</div>
+
+<div>
+    <input (change)="onFileSelected()" type="file" id="file">
+
+    <pdf-viewer [src]="pdfSrc"
+              [render-text]="true"
+              style="display: block;"></pdf-viewer>
+    </div> -->
+
+
+    <div class="container">
+        <div >
+          <h1>Upload Files</h1>
+          <form #uploadForm = "ngForm" style="width: 30%;" 
+          (ngSubmit) = "uploadFileToDMS(uploadForm.value)">
+            <div class="form-group">
+              <label for="projectName">Project</label>
+                     <select  class="form-control textField" id="projectId"
+                     required
+                     name="projectId" (change)="loadModules($event)"  ngModel> 
+                     <option selected value="0" selected>Select Project</option>
+                     <option *ngFor="let project of projects" value="{{project.projectId}}">{{project.projectName}}</option>
+                     
+                  </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ModuleName">Module</label>
+                     <select  class="form-control textField" id="moduleId"
+                     required
+                     name="moduleId"  ngModel> 
+                     <option selected value="0" selected >Select Module</option>
+                     <option *ngFor="let module of modules" value="{{module.moduleId}}">{{module.moduleName}}</option>
+                     
+                  </select>
+            </div>
+
+            <div class="form-group">
+              <label for="projectName">Upload:</label>
+              <input type="file" (change)="selectFile($event)" class="form-control textField" id="file"
+                     required
+                     name="file" ngModel  >          
+            </div>
+      
+            <div class="form-group" style="padding-top: 10px;">
+                <button type="button" class="btn btn-success" (click) = "clearViewField()">clear</button>
+                <button type="button" class="btn btn-success" (click) = "getContentOnThatFile()"
+                style="margin-left: 10px;"
+                >Get Content</button>
+            </div>
+               
+
+               <div class="form-group" style="padding-top: 60px;">
+                <label for="projectName">Content on Uploaded file:</label>
+                <textarea class="form-control textField" style="height: 270px;">{{uploadedContent}}</textarea>
+            
+            </div>
+
+            <div class="form-group" style="padding-top: 10px;">
+                <button type="submit" class="btn btn-success">Upload File</button>
+               
+            </div>
+               
+           
+          </form>
+        </div>
+        <div class="imageViewDiv" >
+            <img class="imageView" [src]="url" *ngIf="url">
+            <pdf-viewer class="pdfView" [src]="pdfSrc"
+              [render-text]="true"
+              style="display: block;"></pdf-viewer>
+            </div>
+
+

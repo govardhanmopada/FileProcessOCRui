@@ -1,0 +1,75 @@
+<div class="container">
+    <div >
+      <h1>Project Creation</h1>
+      <form #createProjectForm = "ngForm" (ngSubmit) = "submitPrjectCreate(createProjectForm.value)">
+        <div class="form-group">
+          <label for="projectName">Proeject-Name:</label>
+          <input type="text" class="form-control textField" id="projectName"
+                 required
+                 name="projectName" ngModel  >          
+        </div>
+  
+         <div class="form-group">
+          <label for="projectDesc">Project-Desc:</label>
+          <!-- <input type="text" class="form-control textField" id="projectDesc"
+                  name="projectDesc" ngModel> -->
+                  <textarea class="form-control textField" id="projectDesc"
+                  name="projectDesc" ngModel ></textarea>
+        </div>
+  
+     
+        <div class="form-group" style="padding-top: 10px;">
+        <button type="submit" class="btn btn-success" >Submit</button>
+       </div>
+       
+      </form>
+    </div>
+
+    <div>
+
+      
+      <div class="example-container mat-elevation-z8">
+      
+        <mat-table [dataSource]="dataSource" matSort>
+      
+          <!-- ID Column -->
+          <ng-container matColumnDef="projectId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.projectId}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="projectName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Project Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.projectName}} </mat-cell>
+          </ng-container>
+      
+          
+          <ng-container matColumnDef="projectDesc">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Project Desc </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.projectDesc}} </mat-cell>
+          </ng-container>
+      
+          
+          <ng-container matColumnDef="nodeId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> NodeId </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.nodeId}} </mat-cell>
+          </ng-container>
+      
+        
+          <ng-container matColumnDef="parentNodeId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Parent NodeID </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.parentNodeId"> {{row.parentNodeId}} </mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;">
+          </mat-row>
+        </mat-table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      </div>
+
+    </div>
+  
+    
+  </div>

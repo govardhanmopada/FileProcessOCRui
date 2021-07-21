@@ -1,0 +1,30 @@
+/* mat-toolbar {
+    height: 64px;
+    position: fixed;
+    z-index: 100;
+    width: 100%  !important;
+} */
+
+mat-sidenav-container{
+    height: 100%;
+}
+
+mat-sidenav,mat-sidenav-content{
+    padding: 16px;
+}
+
+mat-sidenav{
+    background-color: lightcoral;
+    width: 200px;
+}
+
+.primary{
+    color: rgb(235, 38, 38);
+    padding: 16px;
+    height: 20px;
+}
+
+.dmsHeader{
+    color: black;
+    padding-left: 35px;
+}

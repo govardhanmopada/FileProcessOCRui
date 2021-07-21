@@ -1,0 +1,41 @@
+<!-- Creates a layout with a left-positioned sidenav and explicit content. -->
+
+<mat-toolbar color="primary" class="example-toolbar">
+  <mat-toolbar-row>
+     <img src=""> <!-- Add your logo if available-->
+     <mat-icon (click)="sideBarOpened=!sideBarOpened">menu</mat-icon>
+     <span class="dmsHeader">Document Management System</span>
+ </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-sidenav-container >
+
+  
+  
+
+    <mat-sidenav mode="side" [(opened)]="sideBarOpened">
+
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="'/layout/create-project'" routerLinkActive="active"> Create Project </a>
+        <a mat-list-item [routerLink]="'/layout/create-module'" > Create Module </a>
+        <a mat-list-item [routerLink]="'/layout/upload-file'"> Upload File </a>        
+        <a mat-list-item [routerLink]="'/View-File'"> View File </a>
+        <a mat-list-item [routerLink]="'/search-File'"> Search File </a>
+        
+        
+       
+  
+      </mat-nav-list>
+
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      
+      <div style="height: 88vh;">
+        <!-- <button (click)="sideBarOpened=!sideBarOpened"> Toggle side bar</button> -->
+        <router-outlet></router-outlet>
+      </div>
+  
+    </mat-sidenav-content>
+  </mat-sidenav-container>

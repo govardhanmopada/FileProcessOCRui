@@ -1,0 +1,63 @@
+body {
+    padding-top:50px;
+}
+label {
+    color: #0e0084;
+    font-size: 16px;
+    
+}
+fieldset {
+    border: thin solid #ccc; 
+    border-radius: 4px;
+    padding: 20px;
+    padding-left: 40px;
+    background: #fbfbfb;
+}
+legend {
+   color: #678;
+}
+.form-control {
+    width: 95%;
+    padding: 10px !important;
+}
+.form-group {    
+    padding: 10px !important;
+}
+.textField {
+    width: 30% !important;
+}
+label small {
+    color: #678 !important;
+}
+span.req {
+    color:maroon;
+    font-size: 112%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+  
+
+  label {
+    color: #0e0084;
+    font-size: 16px;
+    
+}
